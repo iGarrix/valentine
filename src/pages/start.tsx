@@ -9,23 +9,12 @@ import m6 from '../assets/6.jpg'
 import m7 from '../assets/7.jpg'
 import { pageNumber } from '../storage/stor'
 export default function Main() {
-	const [pageIndex, setPI] = useAtom(pageNumber)
+	const [pageIndex] = useAtom(pageNumber)
 
 	// const navigate = useNavigate()
-	const [pages, setPages] = useState([Start, Me])
+	const [pages] = useState([Start, Me])
 	const CurrentPage = pages[pageIndex]
 	return <CurrentPage />
-}
-
-function Image(src: any) {
-	return (
-		<div className='rounded-xl overflow-hidden'>
-			<img
-				src={src}
-				className='w-[200px] h-[400px] object-contain rounded-xl'
-			/>
-		</div>
-	)
 }
 
 function Me() {
@@ -91,7 +80,7 @@ function Me() {
 function Start() {
 	const [pageIndex, setPI] = useAtom(pageNumber)
 	const [i, setI] = useState(0)
-	const [noy, setNoy] = useState([
+	const [noy] = useState([
 		'Не ми(',
 		'Чого це? Не можна!!!',
 		'Получиш',
